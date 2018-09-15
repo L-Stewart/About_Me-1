@@ -134,67 +134,82 @@ var q5 = function(){
 q5();
 
 // Question Six
-var totalAttempts = 4;
-var rightAsnwer = 17;
-questionSix = prompt('How many tattoos do I have? ');
 
-while(totalAttempts > 1) {
+var tattoos = function(){
+  var totalAttempts = 4;
+  var rightAsnwer = 17;
+  questionSix = prompt('How many tattoos do I have? ');
 
-  if(parseInt(questionSix) === rightAsnwer)
+  while(totalAttempts > 1) {
+
+    if(parseInt(questionSix) === rightAsnwer)
+    {
+      alert('Damn, you good!');
+      correct++;
+      totalAttempts = 0;
+      console.log('how many attempts left', totalAttempts);
+    }
+    else if(questionSix > rightAsnwer)
+    {
+      questionSix = prompt('Wrong! Too high!');
+      totalAttempts--;
+      console.log('Attempts left: ', totalAttempts);
+    }
+    else if(questionSix < rightAsnwer)
+    {
+      questionSix = prompt('Wrong! Too low!');
+      totalAttempts--;
+      console.log('Attempts left: ', totalAttempts);
+    }
+    else {
+      alert('Hey, you need to input a number value.');
+      questionSix = prompt('Try again');
+    }
+  } if (totalAttempts === 1)
   {
-    alert('Damn, you good!');
-    correct++;
-    totalAttempts = 0;
-    console.log('how many attempts left', totalAttempts);
+    alert('You ran out of attempts!');
+    alert('Better luck next. The answer was ' + rightAsnwer);
+    incorrect++;
   }
-  else if(questionSix > rightAsnwer)
-  {
-    questionSix = prompt('Wrong! Too high!');
-    totalAttempts--;
-    console.log('Attempts left: ', totalAttempts);
-  }
-  else if(questionSix < rightAsnwer)
-  {
-    questionSix = prompt('Wrong! Too low!');
-    totalAttempts--;
-    console.log('Attempts left: ', totalAttempts);
-  }
-  else {
-    alert('Hey, you need to input a number value.');
-    questionSix = prompt('Try again');
-  }
-}
+};
+tattoos();
 
 // array of correct answers
-var arrayOfStates  = ['FLORIDA', 'ARIZONA', 'ILLINOIS', 'CALIFORNIA', 'WASHINGTON', 'OREGON', 'COLORADO', 'NEVADA'];
-var trys = 6;
-var correctness = false;
-// Question Seven
-while (trys > 0 && correctness === false)
-{
-  var userGuess = prompt('What states have I traveled to?').toUpperCase();
 
-  if (arrayOfStates.includes(userGuess))
+var states = function(){
+  var arrayOfStates  = ['FLORIDA', 'ARIZONA', 'ILLINOIS', 'CALIFORNIA', 'WASHINGTON', 'OREGON', 'COLORADO', 'NEVADA'];
+  var trys = 6;
+  var correctness = false;
+  // Question Seven
+  while (trys > 0 && correctness === false)
   {
-    correctness = true;
+    var userGuess = prompt('What states have I traveled to?').toUpperCase();
 
-    alert('You are right!');
+    if (arrayOfStates.includes(userGuess))
+    {
+      correctness = true;
+
+      alert('You are right!');
+      alert('Here are all of the states I\'ve gotten tattooed in!\n ' + arrayOfStates.join(','));
+      correct++;
+      break;
+    }
+    else
+    {
+      trys--;
+      alert('Wrong! Try again, ' + trys + ' attempts left');
+    }
+  }
+
+  if (trys === 0)
+  {
+    alert('You ran out of attempts!');
     alert('Here are all of the states I\'ve gotten tattooed in!\n ' + arrayOfStates.join(','));
-    correct++;
-    break;
   }
-  else
-  {
-    trys--;
-    alert('Wrong! Try again, ' + trys + ' attempts left');
-  }
-}
+};
 
-if (trys === 0)
-{
-  alert('You ran out of attempts!');
-  alert('Here are all of the states I\'ve gotten tattooed in!\n ' + arrayOfStates.join(','));
-}
+states();
+
 alert('You got ' + correct + ' out of 7 questions correct.');
 console.log('correct: ' + correct);
 console.log('incorrect: ' + incorrect);
