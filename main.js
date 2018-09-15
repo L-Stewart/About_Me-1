@@ -25,85 +25,114 @@ alert('Hi ' + userName + ', that\'s such a cool name!');
 
 // Question One
 
-questionOne = prompt('Do I like to travel?');
-questionOne.toLowerCase();
+var q1 = function(){
 
-if(questionOne === 'yes'){
-  alert('You guessed right!!!');
-  correct++;
-  console.log('Answer 1: ' + questionOne);
-} else if(questionOne === 'no') {
-  alert('No way I love it!');
-  incorrect++;
-  console.log('Answer 1: ' + questionOne);
-} else {
-  incorrect++;
-  alert(wrong);
-}
+  questionOne = prompt('Do I like to travel?');
+  questionOne.toLowerCase();
+
+  if(questionOne === 'yes'){
+    alert('You guessed right!!!');
+    correct++;
+    console.log('Answer 1: ' + questionOne);
+  } else if(questionOne === 'no') {
+    alert('No way I love it!');
+    incorrect++;
+    console.log('Answer 1: ' + questionOne);
+  } else {
+    incorrect++;
+    alert(wrong);
+  }
+};
+
+q1();
 
 // Question Two
-questionTwo = prompt('Do I have any tattoos?');
-questionTwo.toLowerCase();
 
-if(questionTwo === 'yes'){
-  alert('Good job!');
-  correct++;
-  console.log('Answer 2: ' + questionTwo);
-} else if(questionTwo === 'no'){
-  alert('Think again!');
-  incorrect++;
-  console.log('Answer 2: ' + questionTwo);
-} else {
-  incorrect++;
-  alert(wrong);
-}
+var q2 = function(){
+  questionTwo = prompt('Do I have any tattoos?');
+  questionTwo.toLowerCase();
+
+  if(questionTwo === 'yes'){
+    alert('Good job!');
+    correct++;
+    console.log('Answer 2: ' + questionTwo);
+  } else if(questionTwo === 'no'){
+    alert('Think again!');
+    incorrect++;
+    console.log('Answer 2: ' + questionTwo);
+  } else {
+    incorrect++;
+    alert(wrong);
+  }
+};
+
+q2();
+
 // Question Three
-questionThree = prompt('Do I like to fish?');
-questionThree.toLowerCase();
-if(questionThree === 'yes'){
-  alert('You guessed right!!!');
-  correct++;
-  console.log('Answer 3: ' + questionThree);
-} else if(questionThree === 'no') {
-  alert('No way I love it!');
-  incorrect++;
-  console.log('Answer 3: ' + questionThree);
-} else {
-  incorrect++;
-  alert(wrong);
-}
+
+var q3 = function(){
+  questionThree = prompt('Do I like to fish?');
+  questionThree.toLowerCase();
+  if(questionThree === 'yes'){
+    alert('You guessed right!!!');
+    correct++;
+    console.log('Answer 3: ' + questionThree);
+  } else if(questionThree === 'no') {
+    alert('No way I love it!');
+    incorrect++;
+    console.log('Answer 3: ' + questionThree);
+  } else {
+    incorrect++;
+    alert(wrong);
+  }
+};
+
+q3();
+
 // Question Four
-questionFour = prompt('Was I born in Alaska?');
-questionFour.toLowerCase();
 
-if(questionFour === 'yes'){
-  alert('Good job!');
-  correct++;
-  console.log('Answer 4: ' + questionFour);
-} else if(questionFour === 'no'){
-  alert('Think again!');
-  incorrect++;
-  console.log('Answer 4: ' + questionFour);
-} else {
-  incorrect++;
-  alert(wrong);
-}
+var q4 = function(){
+  questionFour = prompt('Was I born in Alaska?');
+  questionFour.toLowerCase();
+
+  if(questionFour === 'yes'){
+    alert('Good job!');
+    correct++;
+    console.log('Answer 4: ' + questionFour);
+  } else if(questionFour === 'no'){
+    alert('Think again!');
+    incorrect++;
+    console.log('Answer 4: ' + questionFour);
+  } else {
+    incorrect++;
+    alert(wrong);
+  }
+};
+
+q4();
+
 // Question Five
-questionFive = prompt('Do I enjoy living in Washington?');
-questionFive.toLowerCase();
 
-if(questionFive === 'yes'){
-  alert('You guessed right!!!');
-  correct++;
-  console.log('Answer 5: ' + questionFive);
-} else if(questionFive === 'no') {
-  alert('No way I love it!');
-  incorrect++;
-  console.log('Answer 5: ' + questionFive);
-} else {
-  incorrect++;
-  alert(wrong);
-}
+var q5 = function(){
+  questionFive = prompt('Do I enjoy living in Washington?');
+  questionFive.toLowerCase();
+
+  if(questionFive === 'yes'){
+    alert('You guessed right!!!');
+    correct++;
+    console.log('Answer 5: ' + questionFive);
+  } else if(questionFive === 'no') {
+    alert('No way I love it!');
+    incorrect++;
+    console.log('Answer 5: ' + questionFive);
+  } else {
+    incorrect++;
+    alert(wrong);
+  }
+};
+
+q5();
+
 // Question Six
 var totalAttempts = 4;
 var rightAsnwer = 17;
@@ -148,7 +177,7 @@ while (trys > 0 && correctness === false)
   if (arrayOfStates.includes(userGuess))
   {
     correctness = true;
-    
+
     alert('You are right!');
     alert('Here are all of the states I\'ve gotten tattooed in!\n ' + arrayOfStates.join(','));
     correct++;
